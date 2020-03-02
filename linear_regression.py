@@ -14,8 +14,8 @@ class Linear_Regressor(object):
 		self.biases = 0
 
 		len_nums = len(X)
-		loss = (1 / len_nums) * np.sum((y - outputs) ** 2)
 		outputs = self.weights * X + self.biases
+		loss = (1 / len_nums) * np.sum((y - outputs) ** 2)
 
 		for i in range(epochs):
 			print(f"Epoch: {i} val loss ======================== {loss}")
