@@ -18,7 +18,8 @@ class Linear_Regressor(object):
 		loss = self.cost_function(len_nums,y,outputs)
 
 		for i in range(epochs):
-			print(f"Epoch: {i} val loss ======================== {loss}")
+			if verbose:
+				print(f"Epoch: {i} val loss ======================== {loss}")
 
 			delta_weights = alpha * (np.sum((outputs - y) * X))
 			delta_bias = alpha * (np.sum(outputs - y))
