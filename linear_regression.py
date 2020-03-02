@@ -15,7 +15,7 @@ class Linear_Regressor(object):
 
 		len_nums = len(X)
 		outputs = self.weights * X + self.biases
-		loss = (1 / len_nums) * np.sum((y - outputs) ** 2)
+		loss = self.cost_function(len_nums,y,outputs)
 
 		for i in range(epochs):
 			print(f"Epoch: {i} val loss ======================== {loss}")
@@ -27,7 +27,7 @@ class Linear_Regressor(object):
 			self.biases -= delta_bias / len_nums
 
 			outputs = self.weights * X + self.biases
-			loss = (1 / len_nums) * np.sum((y - outputs) ** 2)
+			loss = self.cost_function(len_nums,y,outputs)
 
 
 	def predict(self,X):
@@ -35,4 +35,13 @@ class Linear_Regressor(object):
 		outputs = self.weights * X + self.biases
 		return outputs
 
+	@staticmethod
+	def cost_function(n,y,outputs):
+		avg_loss = 0.0
+		for i in range(n):
+			error = (y[i] - outputs[i])**2
+			avg_loss += error
+
+		avg_loss = avg_loss / (2*n)
+		return avg_loss 
 
