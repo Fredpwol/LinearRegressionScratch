@@ -9,7 +9,7 @@ class Linear_Regressor(object):
 		self.biases = None
 
 
-	def train(self, X, y, epochs=50,alpha=0.005):
+	def train(self, X, y, epochs=50,alpha=0.005,verbose=1):
 		self.weights = 0
 		self.biases = 0
 
