@@ -2,7 +2,7 @@ import numpy as np
 
 
 
-class Linear_Regression(object):
+class Linear_Regressor(object):
 
 	def __init__(self):
 		self.weights = None
