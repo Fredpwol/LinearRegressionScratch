@@ -22,7 +22,7 @@ class Linear_Regressor(object):
 				print(f"Epoch: {i} val loss ========================> {loss}")
 
 
-			delta_weight = alpha * (np.sum((outputs - y) * 2X))
+			delta_weight = alpha * (np.sum((outputs - y) * 2*X))
 			delta_bias = alpha * (np.sum(outputs - y)*2)
 
 			self.weight -= delta_weight / len_nums
