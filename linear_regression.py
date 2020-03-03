@@ -41,7 +41,7 @@ class Linear_Regressor(object):
 	def cost_function(n,y,outputs):
 		avg_loss = 0.0
 		for i in range(n):
-			error = (y[i] - outputs[i])**2
+			error = (outputs[i] - y[i])**2
 			avg_loss += error
 
 		avg_loss = avg_loss / (2*n)
